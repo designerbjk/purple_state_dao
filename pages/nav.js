@@ -4,7 +4,8 @@ import logo from '../public/Union.png'
 
 export default function nav() {
   return (
-    <div className="navbar bg-base-100">
+    <div className="flex justify-center">
+    <div className="navbar bg-base-100 pl-10 pr-10 pt-3">
     <div className="navbar-start">
     <Image src={logo} alt={"Purple State DAO"}/>
       <a className="btn btn-ghost normal-case text-xl">Purple State DAO</a>
@@ -21,5 +22,7 @@ export default function nav() {
       <a className="btn btn-primary">Connect Wallet</a>
     </div>
   </div>
+
+    </div>
   )
 }
