@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logo from "../public/Union.png";
+import ConnectWallet from "./connectWallet";
 
 export default function nav() {
   return (
@@ -26,7 +27,7 @@ export default function nav() {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn btn-primary">Connect Wallet</a>
+          <ConnectWallet />
         </div>
       </div>
     </div>
