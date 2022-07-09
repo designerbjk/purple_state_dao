@@ -13,7 +13,7 @@ export default function nav() {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <a className="font-bold text-slate-100">Swap V1</a>
+              <a className="font-bold text-purple-500">Swap V1</a>
             </li>
             <li>
               <a href="https://purple-state.gitbook.io/purple-state-dao/">
