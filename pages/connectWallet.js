@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { signMessage } from "../utils/sign";
 import Metamask from "../component/metamask";
 
 const Index = () => {

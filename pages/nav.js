@@ -16,13 +16,17 @@ export default function nav() {
               <a className="font-bold text-slate-100">Swap V1</a>
             </li>
             <li>
-              <a>Docs</a>
+              <a href="https://purple-state.gitbook.io/purple-state-dao/">
+                Docs
+              </a>
             </li>
             <li>
               <a>Stats</a>
             </li>
             <li>
-              <a>Newsletter</a>
+              <a href="https://resolute-floor-a8e.notion.site/CRYPPUR-0c24cbd2bca443c79e45d4ad249063e2">
+                Newsletter
+              </a>
             </li>
           </ul>
         </div>
