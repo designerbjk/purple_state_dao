@@ -2,11 +2,13 @@ import { useState } from "react";
 import ConnectWallet2 from "./connectWallet2";
 
 const CalcPurple = () => {
-  const [message, setMessage] = useState();
+  const [trustSeedToken, update] = useState();
 
-  const handleChange = (event) => {
-    setMessage(event.target.value);
+  const listenInput = (event) => {
+    update(event.target.value);
   };
+
+  // Trust Seed Token IDO, 5 cent for V1 SWAP
 
   return (
     <div className="flex justify-center pt-10">
@@ -19,8 +21,7 @@ const CalcPurple = () => {
             type="number"
             id="message"
             name="message"
-            onChange={handleChange}
-            value={message}
+            onChange={listenInput}
             placeholder="0.0"
           />
 
@@ -31,9 +32,9 @@ const CalcPurple = () => {
             className="input input-bordered input-primary w-full max-w-xs text-right text-xl h-18"
             type="number"
             id="message"
-            name="message"
-            value={message * 20}
+            value={trustSeedToken * 20}
             placeholder="0.0"
+            readOnly
           />
 
           <p className="text-center pt-3 pb-3">1 PURPLE = 0.05 USDC</p>
