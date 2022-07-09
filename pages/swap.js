@@ -3,7 +3,7 @@ import ConnectWallet2 from "./connectWallet2";
 import Image from "next/image";
 import arrowDown from "../public/arrowDown.png";
 import USDC from "../public/usdc.png";
-import TST from "../public/trustSeedToken.png";
+import TST from "../public/TrustSeedToken.png";
 
 const CalcPurple = () => {
   const [trustSeedToken, update] = useState();
