@@ -1,24 +1,26 @@
+import ConnectWallet2 from "./connectWallet2";
+
 export default function swap() {
   return (
-    <div className="flex justify-center">
-      <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="flex justify-center pt-10">
+      <div className="bg-gradient-to-r from-blue-800 via-violet-900 to-purple-800 card w-96 shadow-xl">
         <div className="card-body">
-          <h2 className="card-title">You pay</h2>
-          <p>USDC</p>
-          <div className="card-actions justify-end">
-            <input
-              type="text"
-              placeholder="0.0"
-              className="input input-bordered input-primary w-full max-w-xs"
-            />
-            <p>Trust Seed Token</p>
-            <input
-              type="text"
-              placeholder="0.0"
-              className="input input-bordered input-primary w-full max-w-xs"
-            />
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
+          <h2 className="card-title text-slate-300">From</h2>
+          <p className="">USDC</p>
+          <input
+            type="text"
+            placeholder="0.0"
+            className="input input-bordered input-primary w-full max-w-xs text-right text-xl h-18"
+          />
+          <h2 className="card-title pt-10 text-slate-300">To</h2>
+          <p className="">Trust Seed Token</p>
+          <input
+            type="text"
+            placeholder="0.0"
+            className="input input-bordered input-primary w-full max-w-xs text-right text-xl h-18"
+          />
+          <p className="text-center pt-3 pb-3">1 PURPLE = 0.05 USDC</p>
+          <ConnectWallet2 />
         </div>
       </div>
     </div>

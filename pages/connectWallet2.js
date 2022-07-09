@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { signMessage } from "../utils/sign";
 import Metamask from "../component/metamask";
 
-const Index = () => {
+const ConnectWallet2 = () => {
   const [haveMetamask, sethaveMetamask] = useState(true);
 
   const [client, setclient] = useState({
@@ -57,27 +57,36 @@ const Index = () => {
 
   return (
     <>
-      <nav className="fren-nav d-flex">
-        <div className="d-flex" style={{ marginLeft: "auto" }}>
-          <div>
+      <p className="">
+        {!haveMetamask ? (
+          <Metamask />
+        ) : client.isConnected ? (
+          <>
             <button
-              className="btn btn-primary rounded-full bg-gradient-to-r from-violet-600 to-blue-600"
+              onClick={signMessage}
+              type="button"
+              className="w-full max-w-xs btn btn-primary rounded-full bg-gradient-to-r from-violet-600 to-blue-600"
+            >
+              Confirm Swap
+            </button>
+            <p className="text-center pt-4">
+              A fee is associated with this request.
+            </p>
+          </>
+        ) : (
+          <>
+            <br />
+            <button
+              className="w-full max-w-xs btn btn-primary rounded-full bg-gradient-to-r from-violet-600 to-blue-600"
               onClick={connectWeb3}
             >
-              {client.isConnected ? (
-                <>
-                  Connected 🟣 {client.address.slice(0, 4)}...
-                  {client.address.slice(38, 42)}
-                </>
-              ) : (
-                <>Connect Wallet</>
-              )}
+              Connect Wallet
             </button>
-          </div>
-        </div>
-      </nav>
+          </>
+        )}
+      </p>
     </>
   );
 };
 
-export default Index;
+export default ConnectWallet2;

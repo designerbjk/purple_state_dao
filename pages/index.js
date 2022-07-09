@@ -4,7 +4,7 @@ import Swap from "./swap";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <Head>
         <title>Purple State DAO</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
