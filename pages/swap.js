@@ -32,7 +32,10 @@ const CalcPurple = () => {
             id="message"
             name="message"
             onChange={listenInput}
+            minLength="1"
             placeholder="0.0"
+            pattern="^[0-9]*[.,]?[0-9]*$"
+            defaultValue={500}
           />
 
           <div className="self-center pt-5">
@@ -53,14 +56,15 @@ const CalcPurple = () => {
             <span className="pl-2 align-top">Trust Seed Token</span>
           </div>
 
-          <input
-            className="input input-bordered input-primary w-full max-w-xs text-right text-xl h-18"
-            type="number"
-            id="message"
-            value={trustSeedToken * 20}
-            placeholder="0.0"
-            readOnly
-          />
+          <div>
+            <div
+              className="bg-slate-800 border-green-700 
+            rounded border w-80 h-11 text-right text-xl pt-2 pr-3
+            "
+            >
+              {trustSeedToken * 20}
+            </div>
+          </div>
 
           <div className="self-center">
             <div className="text-center pt-3 pb-3">1 PURPLE = 0.05 USDC</div>

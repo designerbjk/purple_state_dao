@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Metamask from "../component/metamask";
+// import Metamask from "../component/metamask";
 
-const Index = () => {
+const connectWallet = () => {
   const [haveMetamask, sethaveMetamask] = useState(true);
 
   const [client, setclient] = useState({
@@ -79,4 +79,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default connectWallet;

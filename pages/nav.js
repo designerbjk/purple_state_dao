@@ -1,8 +1,9 @@
 import Image from "next/image";
 import logo from "../public/Union.png";
 import ConnectWallet from "./connectWallet";
+import Link from "next/link";
 
-export default function nav() {
+export default function Nav() {
   return (
     <div className="flex justify-center">
       <div className="navbar bg-base-100 pl-10 pr-10 pt-3">
@@ -13,7 +14,9 @@ export default function nav() {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <a className="font-bold text-purple-500">Swap V1</a>
+              <Link href="/">
+                <a>Swap V1</a>
+              </Link>
             </li>
             <li>
               <a href="https://purple-state.gitbook.io/purple-state-dao/">
@@ -21,7 +24,9 @@ export default function nav() {
               </a>
             </li>
             <li>
-              <a>Stats</a>
+              <Link href="/stat">
+                <a>Stats</a>
+              </Link>
             </li>
             <li>
               <a href="https://resolute-floor-a8e.notion.site/CRYPPUR-0c24cbd2bca443c79e45d4ad249063e2">
