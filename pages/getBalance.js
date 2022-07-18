@@ -1,5 +1,5 @@
 import React from "react";
-import { ethers, Wallet } from "ethers";
+import { ethers } from "ethers";
 
 export default function GetBalance() {
   async function getBalance() {
@@ -27,9 +27,9 @@ export default function GetBalance() {
       method: "eth_requestAccounts",
     }); //get address of signed account
 
-    console.log(`get name ${name}`);
-    console.log(`get balance ${balance}`);
-    console.log(`get balance ${userAddress}`);
+    // console.log(`get name ${name}`);
+    // console.log(`get balance ${balance}`);
+    // console.log(`get balance ${userAddress}`);
   }
 
   async function sendUSDC(usdcAmount, toAddress) {
@@ -47,9 +47,7 @@ export default function GetBalance() {
       <button className="btn" onClick={readBalance}>
         readBalance
       </button>
-      <button className="btn" onClick={readBalance}>
-        readBalance
-      </button>
+      <div> hh</div>
     </div>
   );
 }
