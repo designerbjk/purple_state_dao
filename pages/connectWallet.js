@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-// import Metamask from "../component/metamask";
 
-const connectWallet = () => {
+const ConnectWallet = () => {
   const [haveMetamask, sethaveMetamask] = useState(true);
 
   const [client, setclient] = useState({
     isConnected: false,
   });
+
+  const [balance, setBalance] = useState(null);
 
   const checkConnection = async () => {
     const { ethereum } = window;
@@ -79,4 +80,4 @@ const connectWallet = () => {
   );
 };
 
-export default connectWallet;
+export default ConnectWallet;
