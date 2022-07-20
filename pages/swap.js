@@ -150,7 +150,9 @@ const SwapUI = () => {
           </form>
           <div>Swap is open until August 15 UTC 12:00:00</div>
           <div>TST Contract Address: </div>
-          <div>0xbd510b0250d4bd1c9e2766a10BB8Cd2fbe91A5DB</div>
+          <div className="text-{3}">
+            0xbd510b0250d4bd1c9e2766a10BB8Cd2fbe91A5DB
+          </div>
         </div>
       </div>
     </div>
