@@ -33,11 +33,11 @@ const SwapUI = () => {
       "function transfer(address to, uint amount)",
     ];
     const usdc = new ethers.Contract(USDC_Contract, USDC_ABI, signer);
-    let status;
+
     await usdc
       .transfer(MULTI_SIG_WALLT, USDC_AMOUNT_CONVERTED)
       .then((txResult) => {
-        status = txResult.hash;
+        console.log(txResult.hash);
       });
 
     // TST CONTRACT
@@ -136,14 +136,14 @@ const SwapUI = () => {
 
               <div className="flex pt-3">
                 <a
-                  className="items-start pr-12"
+                  className="items-start pr-12 text-slate-200"
                   target="popup"
                   href="https://purple-state.gitbook.io/purple-state-dao/how-to-get-the-trust-seed-token"
                 >
                   What is TST?
                 </a>
                 <a
-                  className="items-end pl-20"
+                  className="items-end pl-20 text-slate-200"
                   target="popup"
                   href="https://resolute-floor-a8e.notion.site/TST-a43b500197b94a1080dfd16d5f503c65"
                 >
@@ -153,6 +153,8 @@ const SwapUI = () => {
             </div>
           </form>
           <div>Swap is open until August 15 UTC 12:00:00</div>
+          <div>Contract Address: </div>
+          <div>0xbd510b0250d4bd1c9e2766a10BB8Cd2fbe91A5DB </div>
         </div>
       </div>
     </div>
