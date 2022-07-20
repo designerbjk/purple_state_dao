@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import arrowDown from "../public/arrowDown.png";
 import USDC from "../public/usdc.png";
@@ -6,9 +6,8 @@ import TST from "../public/TrustSeedToken.png";
 import { ethers } from "ethers";
 
 const SwapUI = () => {
-  const [trustSeedToken, settrustSeedToken] = useState(500);
+  const [input_amount, settrustSeedToken] = useState(500);
   // Trust Seed Token IDO, 5 cent for V1 SWAP
-  const [txHash, setTXHash] = useState(null);
 
   const userInput = (event) => {
     settrustSeedToken(event.target.value);
@@ -16,26 +15,59 @@ const SwapUI = () => {
 
   const confirmSwap = async (e) => {
     e.preventDefault();
+
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-    const account = accounts[0];
-    const multiSig = "0x4e12bA2C402b12CFF7001dae353164d6c4B54730";
-    const USDC_AMOUNT = trustSeedToken * 10 ** 6;
+    const user = accounts[0];
+    const MULTI_SIG_WALLT = "0x3847B210444C48e7fa75309483C605df2a89F317";
+
+    const USDC_AMOUNT_CONVERTED = input_amount * 10 ** 6;
     const signer = provider.getSigner();
-    const usdcAddress = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174";
-    const usdcABI = [
+
+    const USDC_Contract = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174";
+    const USDC_ABI = [
       "function name() view returns (string)",
       "function symbol() view returns (string)",
-      "function decimals() view returns (uint8)",
       "function balanceOf(address account) external view returns (uint256)",
       "function totalSupply() view returns (uint256)",
       "function transfer(address to, uint amount)",
     ];
-    const usdc = new ethers.Contract(usdcAddress, usdcABI, signer);
+    const usdc = new ethers.Contract(USDC_Contract, USDC_ABI, signer);
+    let status;
+    await usdc
+      .transfer(MULTI_SIG_WALLT, USDC_AMOUNT_CONVERTED)
+      .then((txResult) => {
+        status = txResult.hash;
+      });
 
-    await usdc.transfer(multiSig, USDC_AMOUNT);
-    setTXHash(tx.hash);
+    // TST CONTRACT
+    const TST_ABI = ["function transfer(address to, uint amount)"];
+    const TST_CONTRACT_ADDRESS = "0xbd510b0250d4bd1c9e2766a10BB8Cd2fbe91A5DB";
+    const TST_MINT_AMOUNT = USDC_AMOUNT_CONVERTED * 20;
+
+    const private_provider = new ethers.providers.JsonRpcProvider(
+      "https://polygon-mainnet.g.alchemy.com/v2/ChFByU9A3UhKnabqL9S9ANE0fFceM--u"
+    );
+    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY);
+    const walletSigner = wallet.connect(private_provider);
+    const tst = new ethers.Contract(
+      TST_CONTRACT_ADDRESS,
+      TST_ABI,
+      walletSigner
+    );
+    // const gasPriceBN = await private_provider.getGasPrice();
+    // const gasPriceEstimate = gasPriceBN.toNumber();
+
+    await tst
+      .transfer(user, TST_MINT_AMOUNT, {
+        gasPrice: ethers.utils.parseUnits("100", "gwei"),
+        gasLimit: 210000,
+      })
+      .then((txResult) => {
+        console.dir(txResult);
+      });
   };
+
   return (
     <div className="flex justify-center pt-10">
       <div className="bg-gradient-to-r from-blue-800 via-violet-900 to-purple-800 card w-96 shadow-xl">
@@ -83,7 +115,7 @@ const SwapUI = () => {
                 className="bg-slate-800 border-green-700 
             rounded border w-80 h-11 text-right text-xl pt-2 pr-3"
               >
-                {trustSeedToken * 20}
+                {input_amount * 20}
               </div>
             </div>
 
@@ -94,17 +126,30 @@ const SwapUI = () => {
               <div className="text-center pb-3">
                 1 Trust Seed Token = 1 Purple Token
               </div>
-              <p className="text-center pb-2">What is Trust Seed Token?</p>
+
               <button
                 type="submit"
                 className="w-full max-w-xs btn btn-primary rounded-full bg-gradient-to-r from-violet-600 to-blue-600"
               >
                 Confirm Swap
               </button>
-              <p className="text-center pt-4">
-                A fee is associated with this request.
-              </p>
-              <p>hello {txHash} </p>
+
+              <div className="flex pt-3">
+                <a
+                  className="items-start pr-12"
+                  target="popup"
+                  href="https://purple-state.gitbook.io/purple-state-dao/how-to-get-the-trust-seed-token"
+                >
+                  What is TST?
+                </a>
+                <a
+                  className="items-end pl-20"
+                  target="popup"
+                  href="https://resolute-floor-a8e.notion.site/TST-a43b500197b94a1080dfd16d5f503c65"
+                >
+                  Swap Guide
+                </a>
+              </div>
             </div>
           </form>
         </div>

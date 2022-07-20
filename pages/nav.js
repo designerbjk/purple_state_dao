@@ -23,11 +23,11 @@ export default function Nav() {
                 Docs
               </a>
             </li>
-            <li>
+            {/* <li>
               <Link href="/stat">
                 <a>Stats</a>
               </Link>
-            </li>
+            </li> */}
             <li>
               <a href="https://resolute-floor-a8e.notion.site/CRYPPUR-0c24cbd2bca443c79e45d4ad249063e2">
                 Newsletter
