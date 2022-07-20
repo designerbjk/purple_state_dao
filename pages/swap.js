@@ -69,9 +69,9 @@ const SwapUI = () => {
   };
 
   return (
-    <div className="flex justify-center pt-10">
-      <div className="bg-gradient-to-r from-blue-800 via-violet-900 to-purple-800 card w-96 shadow-xl">
-        <div className="card-body items-start">
+    <div className="flex justify-center pt-10 ">
+      <div className=" self-center bg-gradient-to-r from-blue-800 via-violet-900 to-purple-800 card  shadow-xl">
+        <div className="card-body ">
           <h2 className="card-title  text-slate-300">From</h2>
           <div>
             <span className="pt-10">
@@ -120,12 +120,8 @@ const SwapUI = () => {
             </div>
 
             <div className="self-center">
-              <p className="text-center pt-3 pb-3">
-                1 Trust Seed Token = 0.05 USDC
-              </p>
-              <div className="text-center pb-3">
-                1 Trust Seed Token = 1 Purple Token
-              </div>
+              <p className=" pt-3 pb-3">1 Trust Seed Token = 0.05 USDC</p>
+              <div className=" pb-3">1 Trust Seed Token = 1 Purple Token</div>
 
               <button
                 type="submit"
@@ -153,8 +149,8 @@ const SwapUI = () => {
             </div>
           </form>
           <div>Swap is open until August 15 UTC 12:00:00</div>
-          <div>Contract Address: </div>
-          <div>0xbd510b0250d4bd1c9e2766a10BB8Cd2fbe91A5DB </div>
+          <div>TST Contract Address: </div>
+          <div>0xbd510b0250d4bd1c9e2766a10BB8Cd2fbe91A5DB</div>
         </div>
       </div>
     </div>
