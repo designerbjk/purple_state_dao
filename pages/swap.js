@@ -74,7 +74,7 @@ const SwapUI = () => {
         <div className="card-body items-start">
           <h2 className="card-title  text-slate-300">From</h2>
           <div>
-            <span className="mt-10">
+            <span className="pt-10">
               <Image src={USDC} alt="USDC Icon" width={24} height={24} />
             </span>
             <span className="pl-2 align-top">USDC</span>
@@ -92,14 +92,14 @@ const SwapUI = () => {
               defaultValue={500}
             />
 
-            <div className="self-center pt-5">
+            <div className=" text-center pt-3">
               <Image src={arrowDown} alt="down arrow" width={28} height={28} />
             </div>
 
-            <h2 className="card-title  text-slate-300">To</h2>
+            <h2 className="card-title pb-3 text-slate-300">To</h2>
 
             <div>
-              <span className="mt-10">
+              <span className="pt-10">
                 <Image
                   src={TST}
                   alt="Trust Seed Token Icon"
