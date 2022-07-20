@@ -152,6 +152,7 @@ const SwapUI = () => {
               </div>
             </div>
           </form>
+          <div>Swap is open until August 15 UTC 12:00:00</div>
         </div>
       </div>
     </div>
