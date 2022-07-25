@@ -141,7 +141,7 @@ const SwapUI = () => {
                 <a
                   className="items-end pl-20 text-slate-200"
                   target="popup"
-                  href="https://resolute-floor-a8e.notion.site/TST-a43b500197b94a1080dfd16d5f503c65"
+                  href="https://purplestatedao.notion.site/USDC-TST-Swap-Guide-a43b500197b94a1080dfd16d5f503c65"
                 >
                   Swap Guide
                 </a>
