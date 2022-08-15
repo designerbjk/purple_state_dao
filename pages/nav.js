@@ -35,9 +35,7 @@ export default function Nav() {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <ConnectWallet />
-        </div>
+        <div className="navbar-end"></div>
       </div>
     </div>
   );
