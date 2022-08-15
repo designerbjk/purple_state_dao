@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Nav from "./nav";
-import Swap from "./swap";
+
+import Thankyou from "./thankyou";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Nav />
-      <Swap />
+      <Thankyou />
     </div>
   );
 }

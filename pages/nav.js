@@ -15,7 +15,7 @@ export default function Nav() {
           <ul className="menu menu-horizontal p-0">
             <li>
               <Link href="/">
-                <a>Swap V1</a>
+                <a>Thank You</a>
               </Link>
             </li>
             <li>
