@@ -1,16 +1,19 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}"],
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
-  // daisyUI config (optional)
-  daisyui: {
-    styled: true,
-    themes: ["dark"],
-    base: true,
-    utils: true,
-    logs: true,
-    rtl: false,
-    prefix: "",
-    darkTheme: "dark",
-    lightTheme: "dark",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        dark: "#0A0A0A",
+        primary: "#A637FE",
+      },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
+    },
   },
+  plugins: [],
 };

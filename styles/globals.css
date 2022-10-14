@@ -1,10 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer utilities {
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+
+@layer components {
+  .__body_text {
+    @apply text-[16px] leading-[126%] opacity-60;
   }
+  .container_lg {
+    @apply px-5 max-w-[calc(1080px+40px)] mx-auto;
+  }
+}
+
+#__next {
+  @apply overflow-x-hidden max-w-[100vw];
+}
+body {
+  @apply font-inter font-normal text-white bg-dark;
+}
+
+.text_gradient {
+  background: linear-gradient(180deg, #6d3cdc 0%, #9849d5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
