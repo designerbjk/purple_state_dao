@@ -7,21 +7,21 @@ const portfolios = [
     title: "CrypPur",
     description:
       "Cryppur is a crypto news curation service. It’s a ultimate guide for Defi, NFT, crypto and financial news. We want to give you insight in money and tech to help your financail status.",
-    readMoreUrl: "#",
+    readMoreUrl: "https://cryppur.com/",
   },
   {
     imgSrc: "/img/microseed.png",
     title: "Microseed",
     description:
       "Micro seed is a investing platform for individuals who are new to crypto industry.",
-    readMoreUrl: "#",
+    readMoreUrl: "https://www.microseed.finance/",
   },
   {
     imgSrc: "/img/crepe.png",
     title: "Crepe",
     description:
       "Crepe is a Defi service that allows users to create on/off chain tokens to trade any assets!",
-    readMoreUrl: "#",
+    readMoreUrl: "https://crepe.fund/",
   },
 ];
 
