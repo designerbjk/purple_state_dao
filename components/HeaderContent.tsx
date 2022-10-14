@@ -44,13 +44,13 @@ const HeaderContent = ({ className = "" }: { className?: string }) => {
 
         <nav className="flex items-center gap-5 md:gap-10">
           <a
-            href="#"
+            href="https://purple-state.gitbook.io/purple-state-w.p-0.1/"
             className="flex items-center gap-1 md:gap-2 text-sm md:text-base text-white opacity-70 hover:opacity-100"
           >
             Docs <Arrow />
           </a>
           <a
-            href="#"
+            href="https://cryppur.com/"
             className="flex items-center gap-1 md:gap-2 text-sm md:text-base text-primary"
           >
             Newsletter <Arrow />
