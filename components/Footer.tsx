@@ -13,7 +13,7 @@ const Footer = () => {
       </div>
       <div className="container_lg">
         <p className="text-sm text-white/60 pb-7 pt-4 lg:pb-20 lg:pt-8">
-          Purple State. 2022
+          The Purple State DAO 2022
         </p>
       </div>
     </footer>
